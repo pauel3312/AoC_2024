@@ -5,4 +5,6 @@ set(CMAKE_C_STANDARD 11)
 
 add_executable(AoC_2024 main.c
         Day_1/Day_1.c
-        Day_1/Day_1.h)
+        Day_1/Day_1.h
+        common/common.c
+        common/common.h)
