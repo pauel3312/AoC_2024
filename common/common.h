@@ -8,6 +8,7 @@ void checkError(int err, const char* msg);
 char* get_input(const char* path);
 int count_char(const char* str, char c);
 void next_number(char** str);
+void skip_number(char** str);
 void sortl(long* arr, int len);
 int countl(const long* arr, int len, long num);
 void next_line(char** str);

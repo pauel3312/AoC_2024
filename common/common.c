@@ -16,10 +16,14 @@ void checkError(int err, const char* msg) {
     }
 }
 
-void next_number(char** str) {
+void skip_number(char** str) {
     while (isdigit(**str)) {
         (*str)++;
     }
+}
+
+void next_number(char** str) {
+    skip_number(str);
     while (!isdigit(**str)) {
         (*str)++;
     }
@@ -63,8 +67,7 @@ char* get_input(const char* path) {
         if (buffer)
         {
             size_t bytes = fread (buffer, 1, length, f);
-            buffer[bytes] = 0;
-            buffer[length] = '\0';
+            buffer[bytes] = '\0';
         }
         fclose (f);
     }
