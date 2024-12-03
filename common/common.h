@@ -9,5 +9,7 @@ char* get_input(const char* path);
 int count_char(const char* str, char c);
 void next_number(char** str);
 void sortl(long* arr, int len);
-int countl(long* arr, int len, long num);
+int countl(const long* arr, int len, long num);
+void next_line(char** str);
+void remove_element(const int* in, int* out, int size_old, int size_new, int index);
 #endif //COMMON_H

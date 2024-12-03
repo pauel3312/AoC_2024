@@ -7,4 +7,6 @@ add_executable(AoC_2024 main.c
         Day_1/Day_1.c
         Day_1/Day_1.h
         common/common.c
-        common/common.h)
+        common/common.h
+        Day_2/Day_2.c
+        Day_2/Day_2.h)

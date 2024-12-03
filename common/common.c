@@ -40,7 +40,7 @@ void sortl(long* arr, int len) {
     }
 }
 
-int countl(long* arr, int len, long num) {
+int countl(const long* arr, const int len, const long num) {
     int count = 0;
     for (int i = 0; i < len; i++) {
         if (arr[i] == num) {
@@ -52,29 +52,53 @@ int countl(long* arr, int len, long num) {
 
 char* get_input(const char* path) {
     char* buffer = NULL;
-    FILE * f = fopen (path, "r");
+    FILE* f = fopen(path, "rb");
 
     if (f)
     {
         fseek (f, 0, SEEK_END);
         const long length = ftell(f);
         fseek (f, 0, SEEK_SET);
-        buffer = malloc(length);
+        buffer = malloc(length+1);
         if (buffer)
         {
-            fread (buffer, 1, length, f);
+            size_t bytes = fread (buffer, 1, length, f);
+            buffer[bytes] = 0;
+            buffer[length] = '\0';
         }
         fclose (f);
     }
     return buffer;
 }
 
-int count_char(const char *str, char c) {
+int count_char(const char* str, char c) {
+    if (str == NULL)
+        return -1;
     int count = 0;
-    for (int i = 0; i < strlen(str); i++) {
-        if (str[i] == c) {
+    for (const char* chr = str; *chr != '\0'; chr++) {
+        if (*chr == c) {
             count++;
         }
     }
     return count;
+}
+
+void next_line(char** str) {
+    while (*(*str) != '\n') {
+        (*str)++;
+    }
+    (*str)++;
+}
+
+void remove_element(const int* in, int* out, int size_old, int size_new, int index) {
+    if (in == NULL || out == NULL || index >= size_old || index < 0 || size_new+1 != size_old) {
+        fprintf(stderr, "Error: Invalid parameters for remove_element\n");
+        exit(EXIT_FAILURE);
+    }
+    for (int i = 0; i < index; i++) {
+        out[i] = in[i];
+    }
+    for (int i = index; i < size_new; i++) {
+        out[i] = in[i + 1];
+    }
 }
