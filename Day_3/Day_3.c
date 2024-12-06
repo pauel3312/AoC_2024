@@ -52,4 +52,3 @@ int day_3(char* input, int result[2]) {
     result[1] = sum_part_2;
     return 0;
 }
-

@@ -22,6 +22,16 @@ void skip_number(char** str) {
     }
 }
 
+int get_len_line(const char* line) {
+    if (line == NULL) return -1;
+    int cnt = 1;
+    while (line[cnt-1] != '\n') { // Because a line is terminated by "\r\n", the condition needs to be on cnt-1
+        cnt++;
+    }
+    return cnt;
+}
+
+
 void next_number(char** str) {
     skip_number(str);
     while (!isdigit(**str)) {
@@ -105,3 +115,12 @@ void remove_element(const int* in, int* out, int size_old, int size_new, int ind
         out[i] = in[i + 1];
     }
 }
+
+bool compare_strings_eo2(const char* str1, const char* str2) {
+    if (str1 == NULL || str2 == NULL) exit(1);
+    for (int i = 0; str1[i] != '\0' && str2[i] != '\0'; i++) {
+        if (str1[i] != str2[i]) return false;
+    }
+    return true;
+}
+
