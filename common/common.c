@@ -90,6 +90,7 @@ char* get_input(const char* path) {
         }
         fclose (f);
     }
+    if (buffer == NULL) exit(1);
     return buffer;
 }
 
