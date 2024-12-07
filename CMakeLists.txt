@@ -13,4 +13,6 @@ add_executable(AoC_2024 main.c
         Day_3/Day_3.c
         Day_3/Day_3.h
         Day_4/Day_4.c
-        Day_4/Day_4.h)
+        Day_4/Day_4.h
+        Day_5/Day_5.c
+        Day_5/Day_5.h)

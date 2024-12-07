@@ -17,4 +17,6 @@ void next_line(char** str);
 void remove_element(const int* in, int* out, int size_old, int size_new, int index);
 int get_len_line(const char* line);
 bool compare_strings_eo2(const char* str1, const char* str2);
+bool find_in_str(char **str, char *c);
+
 #endif //COMMON_H

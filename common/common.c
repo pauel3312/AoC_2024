@@ -31,6 +31,15 @@ int get_len_line(const char* line) {
     return cnt;
 }
 
+bool find_in_str(char **str, char *c) {
+    for (;**str!='\0'; *(str) += 1) {
+        if (compare_strings_eo2(*str, c)) {
+            return true;
+        }
+    }
+    return false;
+}
+
 
 void next_number(char** str) {
     skip_number(str);

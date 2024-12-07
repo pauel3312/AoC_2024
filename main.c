@@ -6,6 +6,7 @@
 #include "Day_2/Day_2.h"
 #include "Day_3/Day_3.h"
 #include "Day_4/Day_4.h"
+#include "Day_5/Day_5.h"
 
 #define DAY_MAX 1
 
@@ -33,5 +34,6 @@ int main(void) {
     run_day(2, day_2, true);
     run_day(3, day_3, true);
     run_day(4, day_4, true);
+    run_day(5, day_5, false);
     return 0;
 }
