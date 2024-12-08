@@ -33,7 +33,17 @@ int get_len_line(const char* line) {
 
 bool find_in_str(char **str, char *c) {
     for (;**str!='\0'; *(str) += 1) {
+        seek_to(str, *c);
         if (compare_strings_eo2(*str, c)) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool seek_to(char **str, char c) {
+    for (;**str!='\0'; *(str) += 1) {
+        if (**str == c) {
             return true;
         }
     }
@@ -106,8 +116,21 @@ int count_char(const char* str, char c) {
     return count;
 }
 
+int count_char_on_line(const char* str, char c) {
+    if (str == NULL) return -1;
+    int count = 0;
+    for (const char* chr = str; *chr != '\n'; chr++) {
+        if (*chr == c) {
+            count++;
+        }
+    }
+    return count;
+}
+
+
 void next_line(char** str) {
-    while (*(*str) != '\n') {
+    while (**str != '\n') {
+        if (**str == '\0') return;
         (*str)++;
     }
     (*str)++;

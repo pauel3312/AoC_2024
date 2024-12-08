@@ -34,6 +34,6 @@ int main(void) {
     run_day(2, day_2, true);
     run_day(3, day_3, true);
     run_day(4, day_4, true);
-    run_day(5, day_5, false);
+    run_day(5, day_5, true);
     return 0;
 }
