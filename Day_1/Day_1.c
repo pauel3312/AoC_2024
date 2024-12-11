@@ -10,7 +10,7 @@
 #include "../common/common.h"
 
 
-int day_1(char* input, long output[2]) {
+int day_1(char* input, int output[2]) {
     const int n_lines = count_char(input, '\n');
     long* list_1 = malloc(sizeof(long) * n_lines);
     long* list_2 = malloc(sizeof(long) * n_lines);

@@ -5,6 +5,6 @@
 #ifndef DAY_1_H
 #define DAY_1_H
 
-int day_1(char* input, long output[2]);
+int day_1(char* input, int output[2]);
 
 #endif //DAY_1_H

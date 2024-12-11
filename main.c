@@ -13,7 +13,7 @@
 typedef int (*func_ptr_t)(char*, int[2]);
 
 void run_day(int num_day, func_ptr_t day_func, bool mode) {
-    long result[2];
+    int result[2];
     char str[1024];
     if (mode) {
         sprintf(str, "../Day_%d/input.txt", num_day);
